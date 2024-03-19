@@ -42,8 +42,8 @@ public class SecurityConfig {
         http.authorizeRequests()
                 .requestMatchers("/new", "/auth", "/assign/count").permitAll()
                 .and()
-                .authorizeRequests().requestMatchers("/project/add/**", "/task/add/**", "/assign/count/project/**",
-                        "/assign/add/**", "/assign").hasAuthority("ADMIN").and()
+                .authorizeRequests().requestMatchers("/project/add/**","/task/add/**","/assign/count/project/**",
+                        "/assign/add/**","/assign").hasAuthority("ADMIN").and()
                 .authorizeRequests().requestMatchers("/assign/status/update/**").hasAuthority("USER")
                 .anyRequest().authenticated().and()
                 .sessionManagement(session -> session.sessionCreationPolicy(STATELESS))
@@ -55,7 +55,6 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-
         return new BCryptPasswordEncoder();
     }
 

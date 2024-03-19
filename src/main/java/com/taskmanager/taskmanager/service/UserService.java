@@ -18,8 +18,6 @@ public class UserService {
     UserRepository userRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
-
-
     public String addUser(User user){
         Optional<User> checkEmailExist = userRepository.findByEmail(user.getEmail());
         if(checkEmailExist.isPresent()){
@@ -28,7 +26,7 @@ public class UserService {
         else{
             String encodedPassword = passwordEncoder.encode(user.getPassword());
             user.setPassword(encodedPassword);
-            //user.setRole(((Role.USER)));
+            user.setRole(Role.USER);
             userRepository.save(user);
             return"Registration successful";
         }
