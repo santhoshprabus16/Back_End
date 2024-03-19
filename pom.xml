@@ -63,9 +63,7 @@
 			<version>0.11.5</version>
 		</dependency>
 
-<<<<<<< HEAD
-	</dependencies>
-=======
+
 	<dependency>
 		<groupId>org.springframework.security</groupId>
 		<artifactId>spring-security-config</artifactId>
@@ -92,7 +90,7 @@
 		<version>6.1.5</version>
 	</dependency>
 </dependencies>
->>>>>>> 4e8bd86 (intial version)
+
 
 	<build>
 		<plugins>
